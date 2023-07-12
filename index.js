@@ -23,7 +23,7 @@ const main = async () => {
         
         if (configfile) {
             console.log("Platform is :", process.platform);
-            if (process.platform == 'linux' || process.platform == 'darwin') {
+            if (process.platform == 'linux') {
                 script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
                     + 'bash cmdline.sh'
                     + ' -configfile ' + '"' + configfile + '"';
@@ -67,7 +67,7 @@ const main = async () => {
                 core.setFailed("WorkSpace,Project & Suite are mandatory parameters");
             }
 
-            if (process.platform == 'linux' || process.platform == 'darwin') {
+            if (process.platform == 'linux') {
                 console.log("Platform is :", process.platform);
                 script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
                     + 'bash cmdline.sh'
