@@ -76,6 +76,15 @@ const main = async () => {
                     + ' -eclipsehome ' + '"' + productpath + '"'
                     + ' -plugins ' + '"' + imshared + '/plugins"';
             }
+           if (process.platform == 'darwin') {
+                console.log("Platform is :", process.platform);
+                script = 'cd ' + '' + productpath + '/cmdline' + '\n'
+                    + './cmdline.sh'
+                    + ' -workspace ' + '' + workspace + ''
+                    + ' -project ' + '' + project + ''
+                    + ' -eclipsehome ' + '' + productpath + ''
+                    + ' -plugins ' + '' + imshared + '/plugins';
+            }
             else
                 if (process.platform == 'win32') {
                     script = 'cd ' + '"' + productpath + '\\cmdline"' + '\n'
