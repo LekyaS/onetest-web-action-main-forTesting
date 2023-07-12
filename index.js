@@ -14,10 +14,10 @@ const main = async () => {
          * and store them in variables for us to use.
          **/
 
-        const productpath = getProductPath();
-        const configfile = core.getInput('configFile', { required: false });
-        var suite;
-        var script='';
+        // const productpath = getProductPath();
+        // const configfile = core.getInput('configFile', { required: false });
+        // var suite;
+        // var script='';
 
         console.log("Platform is :", process.platform);
         
