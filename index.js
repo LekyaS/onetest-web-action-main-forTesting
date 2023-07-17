@@ -98,7 +98,7 @@ const main = async () => {
                 script = script.concat(' -aftsuite ' + '"' + suite + '"');
             }
             else {
-                script = script.concat(' -suite ' + '"' + suite + '"');
+                script = script.concat(' -suite ' + '' + suite + '');
             }
             if (labels) {
                 script = script.concat(' -labels ' + '"' + labels + '"');
