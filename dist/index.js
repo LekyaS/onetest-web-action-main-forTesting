@@ -9732,8 +9732,7 @@ const main = async () => {
                     + './cmdline.sh'
                     + ' -workspace ' + '' + workspace + ''
                     + ' -project ' + '' + project + ''
-                    + ' -eclipsehome ' + '' + productpath + ''
-                    + ' -plugins ' + '' + imshared + '/plugins';
+                    + ' -eclipsehome ' + '' + productpath + '';
             }
             else
                 if (process.platform == 'win32') {
