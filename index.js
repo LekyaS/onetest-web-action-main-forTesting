@@ -23,7 +23,7 @@ const main = async () => {
         
         if (configfile) {
             console.log("Platform is :", process.platform);
-            if (process.platform == 'linux') {
+            if (process.platform == 'linux' || process.platform == 'darwin') {
                 script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
                     + 'bash cmdline.sh'
                     + ' -configfile ' + '"' + configfile + '"';
@@ -68,7 +68,6 @@ const main = async () => {
             }
 
             if (process.platform == 'linux' || process.platform == 'darwin') {
-                console.log("Platform is :", process.platform);
                 script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
                     + 'bash cmdline.sh'
                     + ' -workspace ' + '"' + workspace + '"'
@@ -76,14 +75,6 @@ const main = async () => {
                     + ' -eclipsehome ' + '"' + productpath + '"'
                     + ' -plugins ' + '"' + imshared + '/plugins"';
             }
-           // if (process.platform == 'darwin') {
-           //      console.log("Platform is :", process.platform);
-           //     script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
-           //              + 'bash cmdline.sh'
-           //              + ' -workspace ' + '"' + workspace + '"'
-           //              + ' -project ' + '"' + project + '"'
-           //              + ' -eclipsehome ' + '"' + productpath + '"';
-           //  }
             else
                 if (process.platform == 'win32') {
                     script = 'cd ' + '"' + productpath + '\\cmdline"' + '\n'
@@ -97,9 +88,6 @@ const main = async () => {
                 script = script.concat(' -aftsuite ' + '"' + suite + '"');
             }
             else {
-                // if (process.platform == 'darwin') {
-                //  script = script.concat(' -suite ' + '' + suite + '');
-                // else
                    script = script.concat(' -suite ' + '"' + suite + '"');  
             }
             if (labels) {
