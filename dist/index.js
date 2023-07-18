@@ -9729,7 +9729,7 @@ const main = async () => {
            if (process.platform == 'darwin') {
                 console.log("Platform is :", process.platform);
                script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
-                        + './cmdline.sh'
+                        + 'bash cmdline.sh'
                         + ' -workspace ' + '"' + workspace + '"'
                         + ' -project ' + '"' + project + '"'
                         + ' -eclipsehome ' + '"' + productpath + '"';
