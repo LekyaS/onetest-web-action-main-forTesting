@@ -165,6 +165,8 @@ const main = async () => {
             { encoding: 'utf8' });
 
         console.log(script);
+         console.log("tempDir is "+tempDir);
+        console.log("file-Path is "+filePath);
         console.log('========================== Starting Command Output ===========================');
         var spawn = require("child_process").spawn, child;
         child = spawn("powershell.exe", [filePath]);
