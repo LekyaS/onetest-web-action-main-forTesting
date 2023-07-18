@@ -169,7 +169,7 @@ const main = async () => {
         console.log("file-Path is "+filePath);
         console.log('========================== Starting Command Output ===========================');
         var spawn = require("child_process").spawn, child;
-        child = spawn("powershell.exe", [filePath]);
+        child = spawn("pwsh", [filePath]);
         child.stdout.on("data", function (data) {
             console.log(" " + data);
         });
