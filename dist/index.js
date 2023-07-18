@@ -9728,11 +9728,11 @@ const main = async () => {
             }
            if (process.platform == 'darwin') {
                 console.log("Platform is :", process.platform);
-                script = 'cd ' + '' + productpath + '/cmdline'
-                    + ' ./cmdline.sh'
-                    + ' -workspace ' + '' + workspace + ''
-                    + ' -project ' + '' + project + ''
-                    + ' -eclipsehome ' + '' + productpath + '';
+               script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
+                        + './cmdline.sh'
+                        + ' -workspace ' + '"' + workspace + '"'
+                        + ' -project ' + '"' + project + '"'
+                        + ' -eclipsehome ' + '"' + productpath + '"';
             }
             else
                 if (process.platform == 'win32') {
@@ -9825,12 +9825,12 @@ const main = async () => {
         else{
         child = spawn("powershell.exe", [filePath]);
         }
-        // child.stdout.on("data", function (data) {
-        //     console.log(" " + data);
-        // });
-        // child.stderr.on("data", function (data) {
-        //     console.log("Errors: " + data);
-        // });
+        child.stdout.on("data", function (data) {
+            console.log(" " + data);
+        });
+        child.stderr.on("data", function (data) {
+            console.log("Errors: " + data);
+        });
         child.on("exit", function () {
             console.log("Powershell Script finished");
 
