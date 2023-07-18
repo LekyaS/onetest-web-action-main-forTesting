@@ -97,7 +97,10 @@ const main = async () => {
                 script = script.concat(' -aftsuite ' + '"' + suite + '"');
             }
             else {
-                script = script.concat(' -suite ' + '' + suite + '');
+                // if (process.platform == 'darwin') {
+                //  script = script.concat(' -suite ' + '' + suite + '');
+                // else
+                   script = script.concat(' -suite ' + '"' + suite + '"');  
             }
             if (labels) {
                 script = script.concat(' -labels ' + '"' + labels + '"');
@@ -168,7 +171,12 @@ const main = async () => {
         console.log("file-Path is "+filePath);
         console.log('========================== Starting Command Output ===========================');
         var spawn = require("child_process").spawn, child;
+        if (process.platform == 'darwin') {
         child = spawn("pwsh", [filePath]);
+        }
+        else{
+        child = spawn("powershell.exe", [filePath]);
+        }
         child.stdout.on("data", function (data) {
             console.log(" " + data);
         });
