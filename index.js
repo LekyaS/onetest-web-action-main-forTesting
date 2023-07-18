@@ -78,8 +78,8 @@ const main = async () => {
             }
            if (process.platform == 'darwin') {
                 console.log("Platform is :", process.platform);
-                script = 'cd ' + '' + productpath + '/cmdline' + '\n'
-                    + './cmdline.sh'
+                script = 'cd ' + '' + productpath + '/cmdline'
+                    + ' ./cmdline.sh'
                     + ' -workspace ' + '' + workspace + ''
                     + ' -project ' + '' + project + ''
                     + ' -eclipsehome ' + '' + productpath + '';
@@ -167,8 +167,6 @@ const main = async () => {
             { encoding: 'utf8' });
 
         console.log(script);
-         console.log("tempDir is "+tempDir);
-        console.log("file-Path is "+filePath);
         console.log('========================== Starting Command Output ===========================');
         var spawn = require("child_process").spawn, child;
         if (process.platform == 'darwin') {
@@ -177,12 +175,12 @@ const main = async () => {
         else{
         child = spawn("powershell.exe", [filePath]);
         }
-        child.stdout.on("data", function (data) {
-            console.log(" " + data);
-        });
-        child.stderr.on("data", function (data) {
-            console.log("Errors: " + data);
-        });
+        // child.stdout.on("data", function (data) {
+        //     console.log(" " + data);
+        // });
+        // child.stderr.on("data", function (data) {
+        //     console.log("Errors: " + data);
+        // });
         child.on("exit", function () {
             console.log("Powershell Script finished");
 
