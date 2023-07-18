@@ -9819,7 +9819,7 @@ const main = async () => {
         console.log("file-Path is "+filePath);
         console.log('========================== Starting Command Output ===========================');
         var spawn = (__nccwpck_require__(2081).spawn), child;
-        child = spawn("powershell.exe", [filePath]);
+        child = spawn("pwsh", [filePath]);
         child.stdout.on("data", function (data) {
             console.log(" " + data);
         });
